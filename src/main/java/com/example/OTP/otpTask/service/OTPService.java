@@ -101,56 +101,6 @@ private OtpEntity firstTimeOtp(OtpRequest d){
 
 }
 
-//
-//    public String sendOtp(OtpRequest d) {
-//        // 1. Bazada bu nömrəyə aid PENDING (gözləmədə olan) kod varmı?
-//        var dd = otpRepository.findFirstByPhoneNumberAndStatusOrderByExpiryDateDesc(d.phoneNumber(), OtpStatus.PENDING);
-//
-//        // 2. Əgər varsa və hələ vaxtı bitməyibsə...
-//        if (dd.isPresent() && dd.get().getExpiryDate().isAfter(LocalDateTime.now())) {
-//            // Burada nə etməliyik?
-//            throw new ActiveOtpException("Zəhmət olmasa gözləyin, aktiv kodunuz var.");
-//        }
-//
-//
-//        String generatedCode= generateOtpCode();
-//        OtpEntity newOtp = new OtpEntity();
-//        newOtp.setPhoneNumber(d.phoneNumber());
-//        newOtp.setOtpCode(generatedCode);
-//        newOtp.setStatus(Status.PENDING);
-//        newOtp.setSmsCount(1); // İlk dəfə göndərilir
-//        // 3. Yoxdursa və ya vaxtı bitibsə, yeni kod yaratmağa davam edirik...
-//
-//
-//
-//        // 3. Vaxtı təyin edirik: İndiki vaxt + 5 dəqiqə
-//        newOtp.setExpiryDate(LocalDateTime.now().plusMinutes(5));
-//
-//
-//
-//        // 4. Bazaya yazırıq
-//        otpRepository.save(newOtp);
-//
-//
-//
-//        // 5. SMS göndərmə servisini çağırırıq (Hələlik sadəcə çap edək)
-//        System.out.println("SMS göndərildi nömrəyə: " + d.phoneNumber() + " Kod: " + generatedCode);
-//
-//        return "OTP uğurla göndərildi.";
-//
-//
-//    }
-//
-//    public String generateOtpCode() {
-//        return String.valueOf(ThreadLocalRandom.current().nextInt(100_000, 1000_000));
-//    }
-//}
-
-
-
-
-
-
 //    public String postOtp(OTPRequestDto e){
 //        OtpEntity d= new OtpEntity();
 //        otpRepository.save(otPmapp.dtoToEntity(e));
