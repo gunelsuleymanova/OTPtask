@@ -1,6 +1,7 @@
 package com.example.OTP.otpTask.rest;
 
-import com.example.OTP.otpTask.dao.OTPRequestDto;
+import com.example.OTP.otpTask.dto.request.OtpRequest;
+import com.example.OTP.otpTask.dto.response.OtpResponse;
 import com.example.OTP.otpTask.service.OTPService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,8 +17,9 @@ public class OTPControllerVerify {
 
 
     @PostMapping
-    public String postNumber(@RequestBody OTPRequestDto d){
-        return otpService.postOtp(d);
+    public OtpResponse postNumber(@RequestBody OtpRequest d){
+        return otpService.sendOtp(d);
+
     }
 
 }

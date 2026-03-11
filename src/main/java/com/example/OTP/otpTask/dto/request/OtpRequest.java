@@ -1,4 +1,5 @@
 package com.example.OTP.otpTask.dto.request;
 
-public record OtpRequest() {
+public record OtpRequest(String phoneNumber) {
+    //send
 }
