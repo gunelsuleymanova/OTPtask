@@ -9,7 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface OtpRepository extends JpaRepository<OtpEntity,Long> {
-    //Optional<OtpEntity> findFirstByPhoneNumberAndStatusOrderByExpiryDateDesc(String phoneNumber, OtpStatus status);
 
     Optional<OtpEntity> findByPhoneNumber(String phoneNumber);
     }//optional nullpointerin onunuu alir
